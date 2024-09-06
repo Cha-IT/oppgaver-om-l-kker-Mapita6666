@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passordbeskyttet Side</title>
+</head>
+<body>
+    <h1>Hei heiii velkomennnn</h1>
+    
+    <p>Passord plzz:</p>
+    <input type="password" id="passord" placeholder="Passord hærr">
+    <button onclick="sjekkPassord()">Sjekk</button>
+    
+    <p id="melding"></p>
+
+    <script>
+        let riktigPassord = "OIOIOI";
+        let megderFårsøk = 0;
+
+        function sjekkPassord() {
+            let inputPassord = document.getElementById("passord").value;
+            let meldingElement = document.getElementById("melding");
+            
+            if (inputPassord === riktigPassord) {
+                if (megderFårsøk > 3) {
+                    meldingElement.textContent = "FOR MANGE FORSØK BITCH"
+                    meldingElement.style.color = "pink"
+                    return
+                }
+                meldingElement.textContent = "OMG RIKTIG";
+                meldingElement.style.color = "green";
+            } else {
+                alert(megderFårsøk)
+                megderFårsøk += 1
+                meldingElement.textContent = "FEILLLL";
+                meldingElement.style.color = "red";
+            }
+        }
+    </script>
+    <br>
+    <br>
+    <button onclick="listofnr('oddetall')">oddetall</button>
+    <button onclick="listofnr('partall')">partall</button>
+    <script src="Index.js"></script>
+
+    (Æ fikk ikke te oppgave 4)
+</body>
+</html>
+    
